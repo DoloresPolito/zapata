@@ -4,6 +4,7 @@ import Footer from "@/structure/Footer";
 import Cover from "@/home/Cover";
 import { motion } from "framer-motion";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import FramerNavbar from "@/components/FramerNavbar/FramerNavbar";
 function Home() {
   return (
     <>
@@ -13,7 +14,7 @@ function Home() {
     exit={{ opacity: 0 }}
     transition={{ duration: 1, ease: "easeOut" }}
   >
-      <Navbar />
+      <FramerNavbar />
       <Cover />
  
       <Footer />

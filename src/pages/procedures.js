@@ -4,24 +4,27 @@ import styled from "styled-components";
 import { Section, Container } from "../styles/styles";
 import Navbar from "@/structure/Navbar";
 import Footer from "@/structure/Footer";
+import { motion } from "framer-motion";
 
 function Procedures() {
-//   const { t: translate } = useTranslation("procedures");
+  //   const { t: translate } = useTranslation("procedures");
 
   return (
-    <>
+    <>      <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+  >
+      <Navbar />
 
-        <Navbar />
-   
         <ProceduresSection>
           <ProceduresContainer>
             <p>PROCEDIMIENTOS</p>
-  
           </ProceduresContainer>
         </ProceduresSection>
-
-        <Footer />
-
+      </motion.div>
+      <Footer />
     </>
   );
 }
@@ -32,6 +35,5 @@ const ProceduresSection = styled(Section)`
 `;
 
 const ProceduresContainer = styled(Container)``;
-
 
 export default Procedures;

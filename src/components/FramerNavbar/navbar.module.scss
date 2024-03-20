@@ -3,7 +3,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     width: 100%;
-    background-color: #000;
+    background-color: #ECE8E5;
     height: 0;
     position: absolute;
     top: 0;
@@ -97,12 +97,13 @@
 
                 a {
                     font-size: 3rem;
-                    color: rgb(127, 127, 127);
+                    color:    #281A0F;
+                 
                     transition: 0.25s color;
                 }
 
                 a:hover {
-                    color: rgb(232, 232, 232);
+                    color: rgb(127, 127, 127);
                     transition: 0.25s color;
                 }
             }
@@ -111,7 +112,7 @@
 }
 
 .navbar.active {
-    background-color: #000;
+    background-color: #ECE8E5;
     transition: 0.75s height;
     height: 100vh;
 

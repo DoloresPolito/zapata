@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import {SectionLinks} from "../styles/styles";
+import { SectionLinks } from "../styles/styles";
+import Link from "next/link";
+import arrow from "../../public/assets/arrows/small-white.svg";
 import logo1 from "../../public/assets/footer/logo-footer-1.png";
 import logo2 from "../../public/assets/footer/logo-footer-2.png";
 import logo3 from "../../public/assets/footer/logo-footer-3.png";
@@ -18,7 +20,13 @@ function Footer() {
                 Somos profesionalismo médico, atención personalizada y
                 tecnología de vanguardia
               </h4>
-              <SectionLinks>Contactanos </SectionLinks>
+
+              <Link href="/contact">
+                <FooterLink>
+                  <h6>Contactanos</h6>
+                  <Image src={arrow} alt="arrow" />
+                </FooterLink>
+              </Link>
             </div>
             <div className="bottom">
               <p>©2024 Federico Zapata</p>
@@ -34,9 +42,19 @@ function Footer() {
                 <p>Facebook</p>
               </div>
               <div className="column">
-                <p>Austria 2630, CABA <br/>Buenos Aires<br/>CP1425</p>
-                <p>+54 11 4807 4040<br/>+54 11 4195 0768<br/>info@federicozapata.com.ar</p>
-            
+                <p>
+                  Austria 2630, CABA <br />
+                  Buenos Aires
+                  <br />
+                  CP1425
+                </p>
+                <p>
+                  +54 11 4807 4040
+                  <br />
+                  +54 11 4195 0768
+                  <br />
+                  info@federicozapata.com.ar
+                </p>
               </div>
               <div className="column">
                 <p>Procedimientos</p>
@@ -46,10 +64,10 @@ function Footer() {
               </div>
             </div>
             <div className="logos-container">
-            <Image src={logo1} alt="logo1"/>
-            <Image src={logo2} alt="logo2"/>
-            <Image src={logo3} alt="logo3"/>
-            <Image src={logo4} alt="logo4"/>
+              <Image src={logo1} alt="logo1" />
+              <Image src={logo2} alt="logo2" />
+              <Image src={logo3} alt="logo3" />
+              <Image src={logo4} alt="logo4" />
             </div>
           </RightContainer>
         </FooterContainer>
@@ -60,7 +78,7 @@ function Footer() {
 
 const FooterSection = styled.div`
   width: 100%;
-  max-width: 1600px;
+
   height: 400px;
   background-color: #0b0d1c;
   display: flex;
@@ -72,6 +90,7 @@ const FooterContainer = styled.div`
   height: 90%;
   display: flex;
   flex-direction: row;
+  max-width: 1600px;
 `;
 
 const LeftContainer = styled.div`
@@ -114,7 +133,7 @@ const RightContainer = styled.div`
     align-items: center;
     height: 80px;
     width: 50%;
-    img{
+    img {
       height: 55px;
       width: 65px;
     }
@@ -127,6 +146,13 @@ const RightContainer = styled.div`
     p {
       color: white;
     }
+  }
+`;
+
+const FooterLink = styled(SectionLinks)`
+  border-bottom: 0.8px solid white;
+  h6 {
+    color: white;
   }
 `;
 export default Footer;

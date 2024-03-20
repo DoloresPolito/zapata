@@ -90,6 +90,7 @@ const Bottom = styled.div`
 `;
 
 const TechnologyLink = styled(SectionLinks)`
+  border-bottom: 0.8px solid #281A0F;
 h6{
   color:#281A0F;
   font-size: 15px;

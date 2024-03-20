@@ -73,13 +73,13 @@ const FramerNavbar = () => {
                         <Link href="/">home</Link>
                     </motion.li>
                     <motion.li variants={listItemVariants}>
-                        <Link href="/">about</Link>
+                        <Link href="/procedures">procedimientos</Link>
                     </motion.li>
                     <motion.li variants={listItemVariants}>
-                        <Link href="/">portfolio</Link>
+                        <Link href="/staff">staff</Link>
                     </motion.li>
                     <motion.li variants={listItemVariants}>
-                        <Link href="/">contact</Link>
+                        <Link href="/space">espacio</Link>
                     </motion.li>
                 </motion.ul>
             </div>

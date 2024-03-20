@@ -55,7 +55,7 @@ const FramerNavbar = () => {
             }`}
         >
             <div className={Styles.navigation}>
-                {/* <button className={Styles.button}>learn more</button> */}
+            
                 <div
                     className={Styles.burgerMenuContainer}
                     onClick={() => toggleBurgerMenu()}

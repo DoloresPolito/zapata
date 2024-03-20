@@ -13,18 +13,18 @@ const Tabs = ({ mode }) => {
           {/* <p>{translate("cero")}</p> */}
           <p>procedimientos</p>
         </Link>
-        <Link href="/about">
+        <Link href="/staff">
           {/* <p>{translate("one")}</p> */}
           <p>staff</p>
         </Link>
-        <Link href="/contact">
+        {/* <Link href="/contact"> */}
           {/* <p>{translate("two")}</p> */}
           <p>espacio</p>
-        </Link>
-        <Link href="/space">
+        {/* </Link>
+        <Link href="/space"> */}
           {/* <p>{translate("three")}</p> */}
           <p>contacto</p>
-        </Link>
+        {/* </Link> */}
       </TabsBox>
     </>
   );

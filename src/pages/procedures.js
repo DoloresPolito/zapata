@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 // import { useTranslation } from "next-i18next";
 // import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -10,21 +11,24 @@ function Procedures() {
   //   const { t: translate } = useTranslation("procedures");
 
   return (
-    <>      <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-  >
-      <Navbar />
+    <>
+      {" "}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <Navbar />
 
         <ProceduresSection>
           <ProceduresContainer>
             <p>PROCEDIMIENTOS</p>
           </ProceduresContainer>
         </ProceduresSection>
-      </motion.div>
+  
       <Footer />
+      </motion.div>
     </>
   );
 }

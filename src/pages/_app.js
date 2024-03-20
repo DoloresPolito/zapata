@@ -1,7 +1,7 @@
 import Head from "next/head";
 import GlobalStyles from "../styles/global";
 // import { ParallaxProvider } from "react-scroll-parallax";
-// import { appWithTranslation } from "next-i18next";
+import { appWithTranslation } from "next-i18next";
 
 
 const MyApp = ({ Component, pageProps }) => {
@@ -47,4 +47,4 @@ const MyApp = ({ Component, pageProps }) => {
   );
 };
 
-export default MyApp;
+export default appWithTranslation(MyApp);

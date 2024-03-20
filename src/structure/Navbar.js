@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-// import { useRouter } from "next/router";
-// import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import Hamburger from "hamburger-react";
 import Menu from "@/structure/Menu";
@@ -9,11 +9,11 @@ import Tabs from "@/structure/Tabs";
 
 function Navbar() {
   const [width, setWidth] = useState(null);
-//   const { locale, locales, push } = useRouter();
-//   const { t: translate } = useTranslation("navbar");
-//   const handleClick = (l) => () => {
-//     push("/", undefined, { locale: l });
-//   };
+  const { locale, locales, push } = useRouter();
+  const { t: translate } = useTranslation("navbar");
+  const handleClick = (l) => () => {
+    push("/", undefined, { locale: l });
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -49,13 +49,13 @@ function Navbar() {
               </LinkContainer>
                        <LanguageContainer>
                        <div className="languages">
-                  <button >
-                    {/* {translate("spanish")} */}
-                    español
+                  <button onClick={handleClick(locales[0])}>
+                    {translate("spanish")}
+      
                   </button>
-                  <button >
-                    {/* {translate("english")} */}
-                    ingles
+                  <button onClick={handleClick(locales[1])}>
+                    {translate("english")}
+    
                   </button>
                 </div>
               </LanguageContainer>
@@ -71,6 +71,7 @@ function Navbar() {
     </>
   );
 }
+
 
 const NavbarSection = styled.div`
   width: 100%;

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Styles from "./navbar.module.scss"
 import {motion} from 'framer-motion'
+import Link from "next/link";
 
 const FramerNavbar = () => {
 
@@ -69,16 +70,16 @@ const FramerNavbar = () => {
                     variants={motionVariants}
                 >
                     <motion.li variants={listItemVariants}>
-                        <a href="/">home</a>
+                        <Link href="/">home</Link>
                     </motion.li>
                     <motion.li variants={listItemVariants}>
-                        <a href="/">about</a>
+                        <Link href="/">about</Link>
                     </motion.li>
                     <motion.li variants={listItemVariants}>
-                        <a href="/">portfolio</a>
+                        <Link href="/">portfolio</Link>
                     </motion.li>
                     <motion.li variants={listItemVariants}>
-                        <a href="/">contact</a>
+                        <Link href="/">contact</Link>
                     </motion.li>
                 </motion.ul>
             </div>

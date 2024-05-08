@@ -6,6 +6,7 @@ import { Section, Container } from "../styles/styles";
 import Navbar from "@/structure/Navbar";
 import Footer from "@/structure/Footer";
 import { motion } from "framer-motion";
+import Inner from "@/components/Layout/Inner";
 
 function Procedures() {
     const { t: translate } = useTranslation("procedures");
@@ -13,12 +14,13 @@ function Procedures() {
   return (
     <>
       {" "}
-      <motion.div
+      <Inner backgroundColor={"#B0AD98"}>
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-      >
+      > */}
         <Navbar />
 
         <ProceduresSection>
@@ -28,7 +30,8 @@ function Procedures() {
         </ProceduresSection>
   
       <Footer />
-      </motion.div>
+      </Inner>
+      {/* </motion.div> */}
     </>
   );
 }

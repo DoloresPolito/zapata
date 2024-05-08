@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import styled from "styled-components";
 import { SectionLinks, H1, H3 } from "../styles/styles";
@@ -10,9 +11,13 @@ import picture1 from "../../public/assets/procedures/rostro.png";
 // import picture4 from "../../public/assets/procedures/rostro.png";
 import leftcarousel from "../../public/assets/arrows/left-carousel.svg";
 import rightcarousel from "../../public/assets/arrows/right-carousel.svg";
+// import { serverSideTranslations } from "../../node_modules/next-i18next/serverSideTranslations";
+// import { useTranslation } from "../../node_modules/next-i18next";
 
-function Cover() {
+function Cover({translate}) {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // const { t: translate } = useTranslation("home");
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
@@ -30,14 +35,14 @@ function Cover() {
     { id: 5, nombre: "Nariz", imagen: "picture3" },
     { id: 6, nombre: "Nariz", imagen: "picture3" },
   ];
+
+
   return (
     <>
       <CoverSection>
         <CoverContainer>
           <H1>
-            Profesionalismo médico,
-            <br /> atención personalizada y tecnología
-            <br /> de vanguardia.
+          {translate("title")}
           </H1>
           <CarouselContainer>
             <Left>
@@ -105,6 +110,14 @@ function Cover() {
       </CoverSection>
     </>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["navbar", "home"])),
+    },
+  };
 }
 
 const CoverSection = styled.div`
@@ -226,5 +239,9 @@ const ScrollbarIndicator = styled.div`
   background-color: #182e50;
   transition: width 0.5s ease; 
 `;
+
+
+
+
 
 export default Cover;

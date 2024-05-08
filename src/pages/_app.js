@@ -2,9 +2,9 @@ import Head from "next/head";
 import GlobalStyles from "../styles/global";
 // import { ParallaxProvider } from "react-scroll-parallax";
 import { appWithTranslation } from "next-i18next";
+import { AnimatePresence } from "framer-motion";
 
-
-const MyApp = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps, router }) => {
   return (
     <>
       <Head>
@@ -38,10 +38,10 @@ const MyApp = ({ Component, pageProps }) => {
       </Head>
 
       <GlobalStyles />
-      <div>
-   
-          <Component {...pageProps} />
-
+      <div className="main">
+        <AnimatePresence mode="wait">
+          <Component key={router.route} {...pageProps} />
+        </AnimatePresence>
       </div>
     </>
   );

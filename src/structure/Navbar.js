@@ -7,13 +7,25 @@ import Hamburger from "hamburger-react";
 import Menu from "@/structure/Menu";
 import Tabs from "@/structure/Tabs";
 
+
 function Navbar() {
   const [width, setWidth] = useState(null);
   const { locale, locales, push } = useRouter();
   const { t: translate } = useTranslation("navbar");
+
   const handleClick = (l) => () => {
     push("/", undefined, { locale: l });
+ 
+    
+
+    
   };
+
+
+
+  // useEffect(() => {
+
+  // }, [locale]);
 
   useEffect(() => {
     const handleResize = () => {
